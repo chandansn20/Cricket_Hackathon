@@ -9,21 +9,6 @@ import matplotlib.pyplot as plt
 import numpy as np
 import random,statistics,sys,time
 
-def totalovers():
-    #enter 20 overs as user input
-    try:
-        while True:
-            innings_overs=int(input("Enter number of overs:"))
-            if innings_overs!=20:
-                print("Its 20-20, Enter again: ")
-                continue
-            else:
-                break
-    except Exception as e:
-        print("Invlaid Entry Occured",e)
-
-    return innings_overs
-
 def runs():
     #total possibilities in overs 0,1,2,4,6 and Wicket, consider a list runs
 
@@ -108,7 +93,7 @@ def predict_score():
     return predict_pbks,predict_srh
 
 def main():
-    over=totalovers()
+    over=20
     run=runs()
     prediction_pbks, prediction_srh = predict_score()
     score,wicket,runs_per_over = Team1(over,run)
